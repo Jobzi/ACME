@@ -1,0 +1,26 @@
+{
+  "name": "acme",
+  "version": "1.0.0",
+  "description": "acme proyect fo calculate money to paid",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ACME"
+  ],
+  "author": "Jipson Murillo",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.12"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0"
+  }
+}
