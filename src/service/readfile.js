@@ -1,9 +1,9 @@
 const fs = require('fs')
 
 // @method readFileText, read file any file from file root
-function readFileText (nameFile) {
+function readFileText (fileName) {
   return new Promise((resolve) => {
-    fs.readFile(nameFile, (err, data) => {
+    fs.readFile(fileName, (err, data) => {
       if (err) throw err
       resolve(data.toString().split('\r\n'))
     })

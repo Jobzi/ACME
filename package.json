@@ -1,7 +1,7 @@
 {
   "name": "acme",
   "version": "1.0.0",
-  "description": "acme proyect fo calculate money to paid",
+  "description": "The company ACME offers their employees the flexibility to work the hours they want.",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
