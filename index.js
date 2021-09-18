@@ -1,4 +1,4 @@
-const { convertToHours } = require('./src/helpers/covertHours')
+const { convertToHours, validateString } = require('./src/helpers/covertHours')
 const { readFileText } = require('./src/service/readfile')
 const { DAYS, NEW_SCHEDULES, PRICES } = require('./src/helpers/constant')
 
@@ -14,10 +14,6 @@ Sábado y Domingo
     18:01 - 00:00           25 USD
 */
 
-// const TRABAJADOR = 'ASTRID=MO10:00-12:00,TH12:00-14:00,SU20:00-21:00'
-// const TRABAJADOR = 'RENE=MO10:00-12:00,TU10:00-12:00,TH01:00-03:00,SA14:00-18:00,SU20:00-21:00'
-// const TRABAJADOR = 'JANINA=MO1:00-3:00,TH14:00-20:00,SA10:00-22:00,SA6:00-22:00'
-
 const Main = async () => {
   const workers = await readFileText('file.txt')
 
@@ -25,8 +21,14 @@ const Main = async () => {
     console.log('====================================================')
     const stringValue = worker
     const [name, days] = stringValue.split('=')
-    const paid = calculatePayment(splitSchedule(days))
-    console.log(`The amount to pay ${name} is: ${paid} USD`)
+    if (validateString(worker)) {
+      const paid = calculatePayment(splitSchedule(days))
+      console.log(`The amount to pay ${name} is: ${paid} USD`)
+    } else {
+      console.log(
+        `The data entry of ${name} is incorrect. Check the format.\nFormat: NAME=DDHH:MM-HH:MM,DDHH:MM-HH:MM`
+      )
+    }
   })
 }
 

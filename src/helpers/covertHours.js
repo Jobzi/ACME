@@ -5,5 +5,9 @@ function convertToHours (hours) {
   const minutes = (hend - hstart) / 1000 / 60
   return [hstart, hend, minutes]
 }
+function validateString (worker) {
+  const REGEX = /[\w]+[=]([A-Z]{2}\d{2}[:]\d{2}[-]\d{2}[:]\d{2}[,]?)+/gi
+  return REGEX.test(worker)
+}
 
-module.exports = { convertToHours }
+module.exports = { convertToHours, validateString }
