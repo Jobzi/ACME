@@ -12,9 +12,13 @@ npm install
 ```
 
 **develop** — In the 'scripts' administration (it is a hash object of script commands that are executed at various times in the life cycle of your package).  To run in development mode use the following command.
-
 ```terminal
 npm run dev
+```
+
+**start** — Run de proyect
+```terminal
+npm run start
 ```
 
 <details><summary>Problem Description</summary>
