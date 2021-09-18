@@ -1,7 +1,7 @@
 ## Hi, everyone... Welcome to ACME
 
 For ACME developer. I used Javascript with a "standard" [ESLint](https://eslint.org/) linter. Thanks to the Linter it helps a lot to maintain a readable code following rules determined by javascript stander.
- In conjunction with [nodemon](https://eslint.org/) for a more fluid development.
+ In conjunction with [nodemon](https://github.com/remy/nodemon) for a more fluid development.
 
 ## Overview of project
 
