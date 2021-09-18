@@ -1,4 +1,4 @@
-const { convertToHours } = require('../helpers/covertHours')
+const { convertToHours } = require('../helpers/utils')
 const { DAYS, NEW_SCHEDULES, PRICES } = require('../helpers/constant')
 /*
 Lunes - Viernes             PAID

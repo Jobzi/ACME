@@ -1,5 +1,5 @@
 const { readFileText } = require('./src/service/readfile')
-const { validateString } = require('./src/helpers/covertHours')
+const { validateString } = require('./src/helpers/utils')
 const { calculatePayment, splitSchedule } = require('./src/controller/calculatePayment')
 
 const Main = async () => {

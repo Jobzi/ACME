@@ -1,4 +1,4 @@
-const { convertToHours } = require('./covertHours')
+const { convertToHours } = require('./utils')
 
 const DAYS = {
   MO: 0,
