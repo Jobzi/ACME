@@ -27,6 +27,7 @@ npm run start
 ```
 
 <details><summary>Problem Description</summary>
+
 The company ACME offers their employees the flexibility to work the hours they want. They will pay for the hours worked based on the day of the week and time of day, according to the following table:
 
 | Monday - Friday|Price  |
@@ -58,5 +59,40 @@ For example:
 |------------|----------------------------------------------------------------------------|--------------------------------------------------|
 | **Input**  | RENE=MO10:00-12:00,TU10:00-12:00,TH01:00-03:00,SA14:00-18:00,SU20:00-21:00 | ASTRID=MO10:00-12:00,TH12:00-14:00,SU20:00-21:00 |
 | **Output** | The amount to pay RENE is: 215 USD                                         | The amount to pay ASTRID is: 85 USD              |
+
+</details>
+<details><summary>Architecture</summary>
+In order to have a better architecture it was decided to separate the logic in different modules, we have the payment calculator controller that has all the logic to calculate payments. Then create a folder that contains the constant data, besides having another utilities file.
+Finally a folder containing the service from where the information is provided in this use case read the information from a text file.
+
+```
+ACME
+├── README.md
+├── package-lock.json
+├── package.json
+├── index.js
+├── file.txt
+├── src
+│    ├── controller
+│    │   └── calculatePayment.js
+│    ├── helpers
+│    │   ├── constant.js
+│    │   └── utils.js
+│    └── service
+│           └── readfile.js
+└── test
+     ├── app.test.js
+     ├── convetToHours.test.js
+     ├── helpers.js
+     └── regex.test.js
+```
+
+</details>
+
+<details><summary>Metodology</summary>
+
+In the development of the application we chose to use a [kanban](https://en.wikipedia.org/wiki/Kanban_(development)), since it is a visual method that allows the status of the projects to be known at a glance and new tasks can be assigned in a very effective way.
+
+![Screenshot](image/image.png)
 
 </details>
