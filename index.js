@@ -1,6 +1,6 @@
 const { readFileText } = require('./src/service/readfile')
 const { validateString } = require('./src/helpers/utils')
-const { calculatePayment, splitSchedule } = require('./src/controller/calculatePayment')
+const { calculatePayment } = require('./src/controller/calculatePayment')
 
 const Main = async () => {
   const workers = await readFileText('file.txt')
@@ -9,7 +9,7 @@ const Main = async () => {
     const stringValue = worker
     const [name, days] = stringValue.split('=')
     if (validateString(worker)) {
-      const paid = calculatePayment(splitSchedule(days))
+      const paid = calculatePayment(days)
       console.log(`The amount to pay ${name} is: ${paid} USD`)
     } else {
       console.log(

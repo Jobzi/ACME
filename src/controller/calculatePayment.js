@@ -24,11 +24,14 @@ function splitSchedule (args) {
   return scheduleArray
 }
 
-function calculatePayment (schudeleOfWorker) {
+function calculatePayment (days) {
+  const schudeleOfWorker = splitSchedule(days)
   let total = 0
   schudeleOfWorker.forEach((day) => {
     const [whoDay, shechude] = day
-    total += calculatePaymentForHour(shechude, whoDay)
+    if (shechude !== false) {
+      total += calculatePaymentForHour(shechude, whoDay)
+    }
   })
   return total
 }
@@ -38,32 +41,24 @@ function calculatePaymentForHour (shechude, day) {
   const init = inRange(shechude[0])
   const finish = inRange(shechude[1])
   if (init === finish) {
-    // console.log('mismos horarios', PRICES[init], DAYS[day])
     const result = (shechude[1] - shechude[0]) / 1000 / 60 / 60
     paid = result * (PRICES[init] + DAYS[day])
-  }
-
-  if (finish - init === 1) {
-    // console.log('second option', NEW_SCHEDULES)
+  } else if (finish - init === 1) {
     const hourOne = (NEW_SCHEDULES[init][1] - shechude[0]) / 1000 / 60 / 60
-    // console.log('hour one', hourOne, PRICES[init], DAYS[day])
     const one = Math.round(hourOne) * (PRICES[init] + DAYS[day])
     const hourTwo = (shechude[1] - NEW_SCHEDULES[finish][0]) / 1000 / 60 / 60
-
     const two = Math.round(hourTwo) * (PRICES[finish] + DAYS[day])
     paid = one + two
-  }
-
-  if (finish - init === 2) {
-    // console.log('third option')
+  } else if (finish - init === 2) {
     const hourOne = (NEW_SCHEDULES[init][1] - shechude[0]) / 1000 / 60 / 60
-    // console.log('hour one', hourOne, PRICES[init], DAYS[day])
     const one = Math.round(hourOne) * (PRICES[init] + DAYS[day])
     const hourTwo = (shechude[1] - NEW_SCHEDULES[finish][0]) / 1000 / 60 / 60
-
     const two = Math.round(hourTwo) * (PRICES[finish] + DAYS[day])
     const hourThree = 9 * (PRICES[init + 1] + DAYS[day])
     paid = one + two + hourThree
+  } else {
+    console.error('NO  EXISTE NINGUN HORARIO')
+    paid = 0
   }
   return paid
 }
