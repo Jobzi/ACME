@@ -16,6 +16,11 @@ npm install
 npm run dev
 ```
 
+**test** — The following command is used to run the tests. [Jest](https://jestjs.io/) is a JavaScript testing framework designed to ensure the correctness of any JavaScript code base.
+```terminal
+npm run test
+```
+
 **start** — Run de proyect
 ```terminal
 npm run start
