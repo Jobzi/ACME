@@ -4,6 +4,11 @@ For ACME developer. I used Javascript with a "standard" [ESLint](https://eslint.
  In conjunction with [nodemon](https://github.com/remy/nodemon) for a more fluid development.
 
 ## Overview of project
+**Clone** — 
+
+```terminal
+git clone https://github.com/Jobzi/ACME.git
+```
 
 **Install** — For this proyect I used nodejs
 
@@ -11,17 +16,17 @@ For ACME developer. I used Javascript with a "standard" [ESLint](https://eslint.
 npm install
 ```
 
-**develop** — In the 'scripts' administration (it is a hash object of script commands that are executed at various times in the life cycle of your package).  To run in development mode use the following command.
+**Develop** — In the 'scripts' administration (it is a hash object of script commands that are executed at various times in the life cycle of your package).  To run in development mode use the following command.
 ```terminal
 npm run dev
 ```
 
-**test** — The following command is used to run the tests. [Jest](https://jestjs.io/) is a JavaScript testing framework designed to ensure the correctness of any JavaScript code base.
+**Test** — The following command is used to run the tests. [Jest](https://jestjs.io/) is a JavaScript testing framework designed to ensure the correctness of any JavaScript code base.
 ```terminal
 npm run test
 ```
 
-**start** — Run de proyect
+**Start** — Run de proyect
 ```terminal
 npm run start
 ```
